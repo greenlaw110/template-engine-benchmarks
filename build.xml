@@ -46,8 +46,7 @@
             <sysproperty  key="ntimes" value="${ntimes}"/>
             <sysproperty  key="buf" value="${buf}"/>
             <classpath location="classes"/>
-            <classpath location="${lib}/velocity-1.7.jar"/>
-            <classpath location="${lib}/velocity-1.7-dep.jar"/>
+            <classpath refid="project.class.path"/>
         </java>
     </target>
 
@@ -177,28 +176,28 @@
             <sysproperty  key="out" value="${out}"/>
             <sysproperty  key="wtimes" value="${wtimes}"/>
             <sysproperty  key="ntimes" value="${ntimes}"/>
-            <sysproperty  key="buf" value="${buf}"/>	
-        	<sysproperty  key="handlebars.defaultTemplateLoader" 
+            <sysproperty  key="buf" value="${buf}"/>
+        	<sysproperty  key="handlebars.defaultTemplateLoader"
         		value="${handlebars.defaultTemplateLoader}" />
-        	<sysproperty  key="handlebars.defaultCache" 
+        	<sysproperty  key="handlebars.defaultCache"
         		value="${handlebars.defaultTemplateLoader}" />
             <classpath location="classes"/>
             <classpath refid="project.class.path"/>
         </java>
     </target>
-	
+
     <target name="header">
         <echo>
 #################################################################
-            
+
             JAVA TEMPLATE ENGINE BENCHMARKER v1.0
-            
+
                Output method:   ${out}
                warm up loops:   ${wtimes}
                benchmark loops: ${ntimes}
                buffer mode:     ${buf}
                rythm new API:   ${rythm.new}
-               
+
             type 'ant help' to see help messsage
 ################################################################
         </echo>
@@ -206,7 +205,7 @@
 
     <target name="selected" depends="header,stringbuilder,freemarker,velocity,beetl,rythm,jamon,httl,jmte,mustache,handlebars"></target>
     <target name="all" depends="header,stringbuilder,freemarker,velocity,beetl,rythm,jamon,httl,jmte,jangod,thymeleaf,mustache,handlebars"></target>
-    
+
     <target name="help">
         <echo>
 ==============================================================================
@@ -215,7 +214,7 @@
 
 This is a benchmark program for a collection of Java template engines
 
-You need apache ant to run the program, just type "ant" and it will start. 
+You need apache ant to run the program, just type "ant" and it will start.
 This program accept parameters to configure how to run the benchmark:
 
  1. out: specify how to output rendering result, could be:
@@ -231,7 +230,7 @@ This program accept parameters to configure how to run the benchmark:
 
  4. buf: specify whether use BufferedWriter or OS
     default: false
-    
+
  5. rythm.new: for rythm engine only. specify whether use new API to
     run rythm benchmark or not. Default: false
 
@@ -243,7 +242,7 @@ The arguments should be passed in using property setting. e.g
        -Dbuf=false \
        -Drythm.new=true
 
-Should you have any suggestion or comments, please raise issue via 
+Should you have any suggestion or comments, please raise issue via
 https://github.com/greenlaw110/template-engine-benchmarks/issues
 
 Note since jangod and thymeleaf is way slow than all others, they are not put into the default target. To benchmark jangod and thymeleaf also, run `ant all`
