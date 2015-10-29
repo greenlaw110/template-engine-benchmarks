@@ -13,7 +13,7 @@ This is a benchmark program for a collection of Java template engines:
   * jangod - no version info
   * thymeleaf - 2.0.15
   * mustache - 0.8.12
-  * handlebars - 2.2.0
+  * handlebars - 2.3.2
   
 You need apache ant to run the program, just type "ant" and it will start. 
 This program accept parameters to configure how to run the benchmark:
