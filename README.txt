@@ -14,6 +14,7 @@ This is a benchmark program for a collection of Java template engines:
   * thymeleaf - 2.0.15
   * mustache - 0.8.12
   * handlebars - 2.2.0
+  * chunk - 3.1.0
   
 You need apache ant to run the program, just type "ant" and it will start. 
 This program accept parameters to configure how to run the benchmark:
